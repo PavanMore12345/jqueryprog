@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+var aa;
+var abc=getUrlParameter("nam1");
+var re = /\S+@\S+\.\S+/;
+if(re.test(abc))
+{
+ aa="your email is valid";
+}
+else {
+  aa="your email is not valid";
+}
+window.onload=function what()
+{
+document.getElementById("demo").innerHTML=aa;
+}
+    </script>
+    <style>
+    #demo
+    {
+      color:red;
+      font-size:30px;
+    }
+    </style>
+  </head>
+  <body>
+    <p id="demo"></p>
+  </body>
+</html>
